@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- icono de la pestaña-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.0/jspdf.plugin.autotable.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- NO necesitas html2canvas aquí si usas doc.html() -->
+        <link rel="icon" type="image/x-icon" href="equipo.png" />
+        <title>NutriKids - Evaluación Nutricional Infantil</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <!-- Partículas de fondo -->
+        <div class="particles" id="particles"></div>
+
+        <!-- Vegetales flotantes -->
+        <div class="floating-veggie" style="top: 10%; left: 5%; animation-delay: 0s">🥕</div>
+        <div class="floating-veggie" style="top: 20%; right: 10%; animation-delay: 1s">🥬</div>
+        <div class="floating-veggie" style="top: 60%; left: 8%; animation-delay: 2s">🥒</div>
+        <div class="floating-veggie" style="top: 70%; right: 15%; animation-delay: 3s">🍅</div>
+        <div class="floating-veggie" style="top: 30%; left: 85%; animation-delay: 4s">🥦</div>
+        <div class="floating-veggie" style="top: 80%; left: 70%; animation-delay: 5s">🌽</div>
+        <div class="floating-veggie" style="top: 15%; left: 60%; animation-delay: 1.5s">🫑</div>
+        <div class="floating-veggie" style="top: 90%; right: 60%; animation-delay: 2.5s">🥬</div>
+
+       <!-- Header -->
+<header class="header">
+    <div class="logoEquipo">
+        <img src="equipo.png" alt="equipo">
+    </div>
+    <div class="header-title">
+        <h1>🥗 NutriKids 🥗</h1>
+        <p>Herramienta Educativa de Evaluación Nutricional Infantil</p>
+        <!-- NAVIGATION BAR: Inserted here below the description -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Equipo.html">Equipo</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="colegio">
+        <img src="colegio.png" alt="colegio">
+    </div>
+</header>
+
+        <!-- Contenedor principal -->
+        <div class="container">
+            <!-- Formulario de datos -->
+            <div class="form-card">
+                <h2 class="section-title">Datos del Estudiante</h2>
+
+                <form id="nutritionForm">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="name">👶 Nombre Completo:</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="age">🎂 Edad:</label>
+                            <select id="age" name="age" required>
+                                <option value="">Seleccionar edad...</option>
+                                <option value="11">11 años</option>
+                                <option value="12">12 años</option>
+                                <option value="13">13 años</option>
+                                <option value="14">14 años</option>
+                                <option value="15">15 años</option>
+                                <option value="16">16 años</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="gender">👫 Sexo:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="weight">⚖️ Peso (kg):</label>
+                            <input type="number" id="weight" name="weight" step="0.1" min="20" max="120" required />
+                        </div>
+
+                        <div class="input-group">
+                            <label for="height">📏 Estatura (cm):</label>
+                            <input type="number" id="height" name="height" min="100" max="200" required />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="calculate-btn">🧮 Calcular IMC y Generar Plan</button>
+                </form>
+            </div>
+
+            <!-- Sección de resultados -->
+            <div id="results" class="results-section">
+                <h2 class="section-title">Resultados de la Evaluación</h2>
+                <div id="imcResult" class="imc-result"></div>
+                <div id="classification" class="classification"></div>
+                <div id="recommendations"></div>
+            </div>
+             <div id="menuSection" class="menu-section">
+                <h2 class="section-title">Plan Alimenticio Personalizado - 7 Días</h2>
+                <div id="menuContent"></div>
+                <button class="download-btn" onclick="descargarPlanComoPDF()">📄 Descargar Plan en PDF</button>
+            </div>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>
