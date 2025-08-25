@@ -504,17 +504,14 @@ img {
 
 
 .footer {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background: #fff ;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-    padding: 1em 0;
-    letter-spacing: 1px;
-    font-size: 1rem;
-    z-index: 1000;
-    box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
+  width: 100%;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  padding: 1em 0;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
+  /* NO uses position: fixed ni absolute aquí */
 }
